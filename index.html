@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Focus Timer</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+
+</head>
+<body class="body">
+  <main>
+    <div id="timer-panel">
+      <div id="timer">
+        <span class="minutes">00</span>
+        <span>:</span>
+        <span class="seconds">00</span>
+      </div>
+  
+      <div id="controls">
+        <button class="play"><img src="./assets/play.svg" alt="Play icon"></button>
+        <button class="stop"><img src="./assets/stop.svg" alt="Stop icon"></button>
+        <button class="plus"><img src="./assets/plus.svg" alt="Plus icon"></button>
+        <button class="minus"><img src="./assets/minus.svg" alt="Minus icon"></button>
+      </div>
+    </div>
+
+    <div id="sounds">
+      <button class="forest selected">
+        <img src="./assets/forest.svg" alt="Tree icon">
+        <input class="volumeControl" type="range" name="volume" min="0.0" max="1.0" step="0.1" value="0.5" autocomplete="off">
+      </button>
+      <button class="rain">
+        <img src="./assets/rain.svg" alt="Cloud raining icon">
+        <input class="volumeControl" type="range" name="volume" min="0.0" max="1.0" step="0.1" value="0.5" autocomplete="off">
+      </button>
+      <button class="cafeteria">
+        <img src="./assets/cafeteria.svg" alt="Store icon">
+        <input class="volumeControl" type="range" name="volume" min="0.0" max="1.0" step="0.1" value="0.5" autocomplete="off">
+      </button>
+      <button class="fire">
+        <img src="./assets/fire.svg" alt="Fire icon">
+        <input class="volumeControl" type="range" name="volume" min="0.0" max="1.0" step="0.1" value="0.5" autocomplete="off">
+      </button>
+    </div>
+
+    <div id="mode">
+      <button class="lightMode"><img src="./assets/light.svg" alt="Sun icon"></button>
+      <button class="darkMode hide"><img src="./assets/dark.svg" alt="Moon icon"></button>
+    </div>
+  </main>
+
+  <script src="./js/index.js" type="module"></script>
+</body>
+</html>
