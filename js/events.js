@@ -61,7 +61,9 @@ btnPause.addEventListener('click', function() {
 })
 
 btnStop.addEventListener('click', function() {
-  timer.reset()
+  timer.reset()  
+  btnPlay.classList.remove('hide')
+  btnPause.classList.add('hide')
 })
 
 btnLightMode.addEventListener('click', function() {
