@@ -60,11 +60,6 @@ main {
   color: var(--bg-color);
 }
 
-.dark #controls img,
-.dark #sounds img {
-  filter: invert(91%) sepia(7%) saturate(191%) hue-rotate(201deg) brightness(87%) contrast(90%);
-} 
-
 #controls {
   display: flex;
   gap: 4rem;
@@ -90,6 +85,7 @@ button {
 
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding: 2.4rem;
 }
 
@@ -97,25 +93,16 @@ button {
   background-color: var(--button-bg-dark);
 }
 
-#sounds button input[type=range],
-#sounds button input[type=range]::-webkit-slider-thumb {
+#sounds input[type=range] {  
   margin-top: 3.2rem;
   -webkit-appearance: none;
   height: 0.4rem;
+  width: 100%;
   border-radius: 0.5rem;
   background-color: var(--components-color); 
 }
 
-#sounds button input[type=range]::-ms-thumb {
-  margin-top: 3.2rem;
-  -webkit-appearance: none;
-  height: 0.4rem;
-  border-radius: 0.5rem;
-  background-color: var(--components-color); 
-}
-
-#sounds button input[type=range]::-moz-range-thumb,
-#sounds button input[type=range]::-webkit-slider-runnable-track {
+#sounds input[type=range]::-moz-range-thumb {
   height: 1.6rem;
   width: 1.6rem;
   border-radius: 50%;
@@ -123,7 +110,8 @@ button {
   background-color: var(--components-color); 
 }
 
-#sounds button input[type=range]::-ms-track {
+#sounds input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
   height: 1.6rem;
   width: 1.6rem;
   border-radius: 50%;
@@ -131,15 +119,16 @@ button {
   background-color: var(--components-color); 
 }
 
-.dark #sounds button input[type=range],
-.dark #sounds button input[type=range]::-webkit-slider-thumb,
-.dark #sounds button input[type=range]::-moz-range-thumb,
-.dark #sounds button input[type=range]::-webkit-slider-runnable-track {
+.dark #sounds input[type=range] {
   background-color: var(--bg-color);
 }
 
-.dark #sounds button input[type=range]::-ms-thumb,
-.dark #sounds button input[type=range]::-ms-track {
+.dark #sounds input[type=range]::-moz-range-thumb {
+  background-color: var(--bg-color);
+}
+
+
+.dark #sounds input[type=range]::-webkit-slider-thumb {
   background-color: var(--bg-color);
 }
 
@@ -155,19 +144,23 @@ button {
   background-color: var(--button-selected-dark);
 }
 
-#sounds .selected img {
-  filter: invert(99%) sepia(100%) saturate(1%) hue-rotate(253deg) brightness(107%) contrast(100%);
+.dark #sounds path {
+  fill: var(--components-color-dark);
 }
 
-#sounds .selected input[type=range],
-#sounds .selected input[type=range]::-webkit-slider-thumb,
-#sounds .selected input[type=range]::-moz-range-thumb,
-#sounds .selected input[type=range]::-webkit-slider-runnable-track  {
+#sounds .selected path {
+  fill: #FFFFFF;
+}
+
+#sounds .selected input[type=range] {
   background-color: #FFFFFF;
 }
 
-#sounds .selected input[type=range]::-ms-thumb,
-#sounds button input[type=range]::-ms-track {
+#sounds .selected input[type=range]::-webkit-slider-thumb {
+  background-color: #FFFFFF;
+}
+
+#sounds .selected input[type=range]::-moz-range-thumb {
   background-color: #FFFFFF;
 }
 
