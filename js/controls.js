@@ -1,8 +1,15 @@
 export default function Controls({
+  btnPlay,
+  btnPause,
   btnLightMode,
   btnDarkMode,
   minutesDisplay,
 }) {
+  
+  function reset() {
+    btnPlay.classList.remove("hide")
+    btnPause.classList.add("hide")
+  }
 
   function addMinutes() {
     let minutes = Number(minutesDisplay.textContent)
@@ -31,6 +38,7 @@ export default function Controls({
   }
 
   return {
+    reset,
     addMinutes,
     removeMinutes,
     lightMode,
