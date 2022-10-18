@@ -1,5 +1,6 @@
 import {
   btnPlay,
+  btnPause,
   btnStop,
   btnPlus,
   btnMinus,
@@ -13,6 +14,7 @@ import {
 
 
 export default function Events ({sounds, controls, timer}) {
+
 btnForestAudio.addEventListener('click', function() {
   sounds.pressForestBtn()
 })
@@ -48,6 +50,14 @@ btnMinus.addEventListener('click', function() {
 
 btnPlay.addEventListener('click', function() {
   timer.countDown()
+  btnPlay.classList.add('hide')
+  btnPause.classList.remove('hide')
+})
+
+btnPause.addEventListener('click', function() {
+  timer.hold()
+  btnPlay.classList.remove('hide')
+  btnPause.classList.add('hide')
 })
 
 btnStop.addEventListener('click', function() {
@@ -61,5 +71,4 @@ btnLightMode.addEventListener('click', function() {
 btnDarkMode.addEventListener('click', function() {
   controls.darkMode()
 })
-
 }
