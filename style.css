@@ -148,6 +148,10 @@ button {
   fill: var(--components-color-dark);
 }
 
+.dark #controls img {
+  filter: invert(86%) sepia(11%) saturate(125%) hue-rotate(202deg) brightness(92%) contrast(87%);
+}
+
 #sounds .selected path {
   fill: #FFFFFF;
 }
