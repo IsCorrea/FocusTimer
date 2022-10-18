@@ -3,6 +3,10 @@ import {
   btnRainAudio,
   btnCafeAudio,
   btnFireAudio,
+  rangeVolumeForest,
+  rangeVolumeRain,
+  rangeVolumeCafe,
+  rangeVolumeFire,
  } from "./elements.js"
 
 export default function () {
@@ -10,12 +14,30 @@ export default function () {
   const rainAudio = new Audio('./assets/Chuva.wav')
   const storeAudio = new Audio('./assets/Cafeteria.wav')
   const fireAudio = new Audio('./assets/Lareira.wav')
+  const kitchenTimer = new Audio("https://github.com/maykbrito/automatic-video-creator/blob/master/audios/kichen-timer.mp3?raw=true")
+
 
   forestAudio.loop = true
-  forestAudio.volume = 0.5
   rainAudio.loop = true
   storeAudio.loop = true
   fireAudio.loop = true
+
+  rangeVolumeForest.addEventListener('input', function () {
+    forestAudio.volume = rangeVolumeForest.value
+  })
+
+  rangeVolumeRain.addEventListener('input', function () {
+    rainAudio.volume = rangeVolumeRain.value
+  })
+
+  rangeVolumeCafe.addEventListener('input', function () {
+    storeAudio.volume = rangeVolumeCafe.value
+  })
+
+  rangeVolumeFire.addEventListener('input', function () {
+    fireAudio.volume = rangeVolumeFire.value
+  })
+  
 
   function pressForestBtn () {
     forestAudio.play()
@@ -66,6 +88,7 @@ export default function () {
   }
 
   function timeEnd () {
+    kitchenTimer.play()
     forestAudio.pause()
     rainAudio.pause()
     storeAudio.pause()
@@ -77,7 +100,11 @@ export default function () {
     pressRainBtn,
     pressStoreBtn,
     pressFireBtn,
-    timeEnd
+    timeEnd,
+    forestAudio,
+    rainAudio,
+    storeAudio,
+    fireAudio,
   }
 
 }
