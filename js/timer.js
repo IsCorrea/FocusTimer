@@ -3,6 +3,7 @@ import Audio from './audio.js'
 export default function Timer({
   minutesDisplay,
   secondsDisplay,
+  resetControls,
 }) {
 
   let timerTimeOut
@@ -31,13 +32,14 @@ export default function Timer({
 
       if (minutes <= 0 && seconds <= 0) {
         updateDisplay()
-        Audio().timeEnd()
         reset()
+        resetControls()
+        Audio().timeEnd()
         return
       }
 
       if (seconds <= 0) {
-        seconds = 60
+        seconds = 2
         --minutes
       }
 
@@ -52,10 +54,15 @@ export default function Timer({
     minutes = newMinutes
   }
 
+  function hold() {
+    clearTimeout(timerTimeOut)
+  }
+
   return {
     updateDisplay,
     reset,
     countDown,
     updateMinutes,
+    hold,
   }
 }
