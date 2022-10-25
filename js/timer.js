@@ -4,6 +4,7 @@ export default function Timer({
   minutesDisplay,
   secondsDisplay,
   resetControls,
+  sounds,
 }) {
 
   let timerTimeOut
@@ -34,7 +35,7 @@ export default function Timer({
         updateDisplay()
         reset()
         resetControls()
-        Audio().timeEnd()
+        sounds.timeEnd()
         return
       }
 
