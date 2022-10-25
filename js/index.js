@@ -36,6 +36,7 @@ const timer = Timer({
   minutesDisplay,
   secondsDisplay,
   resetControls: controls.reset,
+  sounds,
 })
 
 Events({sounds, controls, timer})
